@@ -2,7 +2,7 @@
   "name": "fsd-task-2",
   "version": "1.0.0",
   "description": "fsd-layout",
-  "main": "src/index.js",
+  "main": "src/js/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack-config/webpack.dev.config.js",
     "build": "webpack --config webpack-config/webpack.build.config.js"
