@@ -11,14 +11,14 @@ const PATHS = {
 };
 
 const PAGES_DIR = `${PATHS.src}/pages/`
-const PAGES_Folders = fs.readdirSync(PAGES_DIR);
-const PAGES = [];
-PAGES_Folders.forEach((folder) => {
-    PAGES.push({
-        folder: folder,
-        file: fs.readdirSync(`${PATHS.src}/pages/${folder}`).find(fileName => fileName.endsWith('.pug'))
-    });
-})
+// const PAGES_Folders = fs.readdirSync(PAGES_DIR);
+// const PAGES = [];
+// PAGES_Folders.forEach((folder) => {
+//     PAGES.push({
+//         folder: folder,
+//         file: fs.readdirSync(`${PATHS.src}/pages/${folder}`).find(fileName => fileName.endsWith('.pug'))
+//     });
+// })
 
 module.exports = {
     externals: {
@@ -52,14 +52,14 @@ module.exports = {
                 loader: "babel-loader",
                 exclude: "/node_modules/"
             },
-            {
-                // Fonts
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "file-loader",
-                options: {
-                    name: "[name].[ext]"
-                }
-            },
+            // {
+            //     // Fonts
+            //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: "file-loader",
+            //     options: {
+            //         name: "[name].[ext]"
+            //     }
+            // },
             {
                 // images / icons
                 test: /\.(png|jpg|gif|svg)$/,
@@ -121,13 +121,21 @@ module.exports = {
             filename: `[name].[hash].css`
         }),
         new CopyWebpackPlugin([
-            { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+            { from: `${PATHS.src}/${PATHS.assets}images`, to: `${PATHS.assets}images` },
             { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
             { from: `${PATHS.src}/static`, to: "" }
         ]),
-        ...PAGES.map(page => new HtmlWebpackPlugin({
-            template: `${PAGES_DIR}/${page.folder}/${page.file}`,
-            filename: `./${page.file.replace(/\.pug/,'.html')}`
-        }))
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/index/index.pug`,
+            filename: './index.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/ui-kit/colors-and-types/colors-types.pug`,
+            filename: './colors-types.html',
+        }),
+        // ...PAGES.map(page => new HtmlWebpackPlugin({
+        //     template: `${PAGES_DIR}/${page.folder}/${page.file}`,
+        //     filename: `./${page.file.replace(/\.pug/,'.html')}`
+        // }))
     ]
 };

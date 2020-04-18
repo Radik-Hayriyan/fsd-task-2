@@ -1,0 +1,33 @@
+mixin colors(parentClass, name, value)
+    div(class=parentClass)
+        div.view
+        div.description
+            div.name=name
+            div.value=value
+
+mixin types(parentClass, name, description)
+    div(class=parentClass)
+        div.name=name
+        div.description=description
+
+doctype html
+html
+    head
+        title Colors & Types
+    body
+        div.colors-types-wrapper
+            div.logo
+                img(src='')
+            div.colors
+                +colors('dark-shade-100', 'Dark Shade 100%', '#1F2041')
+                +colors('dark-shade-75', 'Dark Shade 75%', '#1F2041')
+                +colors('dark-shade-50', 'Dark Shade 50%', '#1F2041')
+                +colors('dark-shade-25', 'Dark Shade 25%', '#1F2041')
+                +colors('dark-shade-5', 'Dark Shade 5%', '#1F2041')
+                +colors('purple', 'Purple', '#BC9CFF')
+                +colors('green', 'Green', '#6FCF97')
+            div.fonts
+                +types('h1', 'H1', 'This one is the sub-section or widget title')
+                +types('h2', 'H2', 'Next one is the item title inside widgets')
+                +types('h3', 'H3', 'This is a label or CTA text')
+                +types('body', 'Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')
