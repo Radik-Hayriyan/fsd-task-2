@@ -16,9 +16,21 @@ module.exports = {
         app: PATHS.src
     },
     output: {
-        filename: `[name].js`,
+        filename: `[name].[hash].js`,
         path: PATHS.dist,
         publicPath: "/"
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    name: "vendors",
+                    test: /node_modules/,
+                    chunks: "all",
+                    enforce: true
+                }
+            }
+        }
     },
     module: {
         rules: [
@@ -90,7 +102,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: `[name].css`
+            filename: `[name].[hash].css`
         }),
         new CopyWebpackPlugin([
             { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
