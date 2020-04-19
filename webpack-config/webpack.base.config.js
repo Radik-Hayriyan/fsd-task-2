@@ -52,14 +52,14 @@ module.exports = {
                 loader: "babel-loader",
                 exclude: "/node_modules/"
             },
-            // {
-            //     // Fonts
-            //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-            //     loader: "file-loader",
-            //     options: {
-            //         name: "[name].[ext]"
-            //     }
-            // },
+            {
+                // Fonts
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader",
+                options: {
+                    name: "[name].[ext]"
+                }
+            },
             {
                 // images / icons
                 test: /\.(png|jpg|gif|svg)$/,
@@ -122,7 +122,6 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             { from: `${PATHS.src}/${PATHS.assets}images`, to: `${PATHS.assets}images` },
-            { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
             { from: `${PATHS.src}/static`, to: "" }
         ]),
         new HtmlWebpackPlugin({

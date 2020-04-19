@@ -1,3 +1,5 @@
+@import "../../../styles/colors";
+
 @mixin color($className, $bgColor) {
   > #{$className} {
     > .view {
@@ -6,18 +8,37 @@
   }
 }
 
+@mixin font($className, $fontSize, $descriptionFontFamily, $lineHeight, $textTransform) {
+  > #{$className} {
+
+    .name {
+      display: block;
+      height: auto;
+      width: 40px;
+      font-family: Montserrat-Regular, sans-serif;
+      font-size: $fontSize;
+      text-align: right;
+      color: $dark-shade-25;
+    }
+
+    .description {
+      display: block;
+      font-family: $descriptionFontFamily, sans-serif;
+      font-size: $fontSize;
+      line-height: $lineHeight;
+      color: $dark-shade-100;
+      text-transform: $textTransform;
+      width: 345px;
+      height: auto;
+      margin-left: 30px;
+    }
+  }
+}
+
 .colors-types-wrapper {
   max-width: 1440px;
   max-height: 900px;
   display: flex;
-}
-
-.logo {
-  display: flex;
-  width: 44px;
-  height: 44px;
-  margin-left: 29px;
-  margin-top: 29px;
 }
 
 .colors {
@@ -35,46 +56,43 @@
     height: 70px;
     margin-bottom: 20px;
 
-    > div.view {
+    .view {
       width: 100px;
       height: 70px;
       border-radius: 6px;
     }
 
-    > div.description {
+    .description {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-left: 40px;
       width: 230px;
       height: 70px;
+
+      .name {
+        font-family: Quicksand-Bold, sans-serif;
+        font-size: 19px;
+        line-height: 29px;
+        color: $dark-shade-100;
+      }
+
+      .value {
+        font-family: Quicksand-Regular, sans-serif;
+        font-size: 19px;
+        line-height: 29px;
+        color: $dark-shade-100;
+      }
     }
   }
 
-  .description {
-
-    .name {
-      font-family: Quicksand-Bold, sans-serif;
-      font-size: 19px;
-      line-height: 29px;
-      color: #1F2041;
-    }
-
-    .value {
-      font-family: Quicksand-Regular, sans-serif;
-      font-size: 19px;
-      line-height: 29px;
-      color: #1F2041;
-    }
-  }
-
-  @include color('.dark-shade-100', #1F2041);
-  @include color('.dark-shade-75', rgba(31, 32, 65, 0.75));
-  @include color('.dark-shade-50', rgba(31, 32, 65, 0.5));
-  @include color('.dark-shade-25', rgba(31, 32, 65, 0.25));
-  @include color('.dark-shade-5', rgba(31, 32, 65, 0.05));
-  @include color('.purple', #BC9CFF);
-  @include color('.green', #6FCF97);
+  @include color('.dark-shade-100', $dark-shade-100);
+  @include color('.dark-shade-75', $dark-shade-75);
+  @include color('.dark-shade-50', $dark-shade-50);
+  @include color('.dark-shade-25', $dark-shade-25);
+  @include color('.dark-shade-5', $dark-shade-5);
+  @include color('.purple', $purple);
+  @include color('.green', $green);
 }
 
 .fonts {
@@ -83,99 +101,23 @@
   width: 410px;
   margin-left: 424px;
   margin-top: 145px;
-  margin-bottom: 434px;
+  margin-bottom: 435px;
 
   > div {
     display: flex;
     width: 410px;
     margin-bottom: 50px;
 
-    > div.name {
-      height: auto;
-      width: 40px;
-    }
-
-    > div.description {
-      width: 345px;
-      height: auto;
-      margin-left: 31px;
+    &.h3 {
+      margin-bottom: 49px;
     }
   }
+  @include font('.h1', 24px, Quicksand-Bold, 30px, none);
+  @include font('.h2', 19px, Quicksand-Bold, 24px, none);
+  @include font('.h3', 12px, Montserrat-Bold, 15px, uppercase);
+  @include font('.body', 14px, Montserrat-Regular, 24px, none);
 
-  > div.h1 {
-
-    > div.name {
-      display: block;
-      font-family: Montserrat-Regular, sans-serif;
-      font-size: 24px;
-      text-align: right;
-      color: rgba(31, 32, 65, 0.25);
-    }
-
-    > div.description {
-      font-family: Quicksand-Bold, sans-serif;
-      font-size: 24px;
-      line-height: 30px;
-      color: #1F2041;
-    }
-  }
-
-  > div.h2 {
-
-    > div.name {
-      display: block;
-      font-family: Montserrat-Regular, sans-serif;
-      font-size: 19px;
-      text-align: right;
-      color: rgba(31, 32, 65, 0.25);
-    }
-
-    > div.description {
-      font-family: Quicksand-Bold, sans-serif;
-      font-size: 19px;
-      line-height: 24px;
-      color: #1F2041;
-    }
-  }
-
-  > div.h3 {
-
-    > div.name {
-      display: block;
-      font-family: Montserrat-Regular, sans-serif;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: right;
-      text-transform: uppercase;
-      color: rgba(31, 32, 65, 0.25);
-    }
-
-    > div.description {
-      font-family: Montserrat-Bold, sans-serif;
-      font-size: 12px;
-      line-height: 15px;
-      text-transform: uppercase;
-      color: #1F2041;
-    }
-  }
-
-  > div.body {
-
-    > div.name {
-      display: block;
-      font-family: Montserrat-Regular, sans-serif;
-      font-size: 14px;
-      line-height: 24px;
-      text-align: right;
-      color: rgba(31, 32, 65, 0.25);
-    }
-
-    > div.description {
-      font-family: Montserrat-Regular, sans-serif;
-      width: 301px;
-      font-size: 14px;
-      line-height: 24px;
-      color: rgba(31, 32, 65, 0.75);
-    }
+  .body .description {
+    width: 301px;
   }
 }
