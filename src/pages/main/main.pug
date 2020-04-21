@@ -1,0 +1,23 @@
+extends ../../index
+
+block content
+    - let pages = [
+    - 'colors-types',
+    - 'UI kit/Cards',
+    - 'headers-footers',
+    - 'UI kit/Form Elements',
+    - 'Landing page',
+    - 'Landing page/Guests Dropdown',
+    - 'Landing page/Dates Dropdown',
+    - 'Search room/filter',
+    - 'Search room/filter/Preferences Dropdown',
+    - 'Search room/filter/Preferences/Expandable Checkbox list',
+    - 'Room Details',
+    - 'Registration',
+    - 'Sign in'
+    -]
+
+    div.wrapper
+        each val in pages
+            div
+                a(href= val + '.html' target="_blank")= val

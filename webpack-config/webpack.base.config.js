@@ -125,12 +125,20 @@ module.exports = {
             { from: `${PATHS.src}/static`, to: "" }
         ]),
         new HtmlWebpackPlugin({
-            template: `${PAGES_DIR}/index/index.pug`,
+            template: `${PATHS.src}/index.pug`,
             filename: './index.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/main/main.pug`,
+            filename: './main.html',
         }),
         new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/ui-kit/colors-and-types/colors-types.pug`,
             filename: './colors-types.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/ui-kit/headers-and-footers/headers-footers.pug`,
+            filename: './headers-footers.html',
         }),
         // ...PAGES.map(page => new HtmlWebpackPlugin({
         //     template: `${PAGES_DIR}/${page.folder}/${page.file}`,

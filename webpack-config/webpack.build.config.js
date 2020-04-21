@@ -3,6 +3,9 @@ const baseWebpackConfig = require("./webpack.base.config");
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
     mode: "production",
+    output: {
+        publicPath: "https://radik-hayriyan.github.io/fsd-task-2/"
+    },
     plugins: []
 });
 

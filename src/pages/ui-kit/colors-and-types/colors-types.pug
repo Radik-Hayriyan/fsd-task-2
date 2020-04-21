@@ -1,3 +1,5 @@
+extends ../../../index
+
 mixin colors(parentClass, name, value)
     div(class=parentClass)
         .view
@@ -10,23 +12,19 @@ mixin fonts(parentClass, name, description)
         .name=name
         .description=description
 
-doctype html
-html
-    head
-        title Colors & Types
-    body
-        .colors-types-wrapper
-            include ../../../blocks/logo/logo-img/logo-img.pug
-            .colors
-                +colors('dark-shade-100', 'Dark Shade 100%', '#1F2041')
-                +colors('dark-shade-75', 'Dark Shade 75%', '#1F2041')
-                +colors('dark-shade-50', 'Dark Shade 50%', '#1F2041')
-                +colors('dark-shade-25', 'Dark Shade 25%', '#1F2041')
-                +colors('dark-shade-5', 'Dark Shade 5%', '#1F2041')
-                +colors('purple', 'Purple', '#BC9CFF')
-                +colors('green', 'Green', '#6FCF97')
-            .fonts
-                +fonts('h1', 'H1', 'This one is the sub-section or widget title')
-                +fonts('h2', 'H2', 'Next one is the item title inside widgets')
-                +fonts('h3', 'H3', 'This is a label or CTA text')
-                +fonts('body', 'Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')
+block content
+    .colors-types-wrapper
+        include ../../../blocks/logo/logo-img/logo-img.pug
+        .colors
+            +colors('dark-shade-100', 'Dark Shade 100%', '#1F2041')
+            +colors('dark-shade-75', 'Dark Shade 75%', '#1F2041')
+            +colors('dark-shade-50', 'Dark Shade 50%', '#1F2041')
+            +colors('dark-shade-25', 'Dark Shade 25%', '#1F2041')
+            +colors('dark-shade-5', 'Dark Shade 5%', '#1F2041')
+            +colors('purple', 'Purple', '#BC9CFF')
+            +colors('green', 'Green', '#6FCF97')
+        .fonts
+            +fonts('h1', 'H1', 'This one is the sub-section or widget title')
+            +fonts('h2', 'H2', 'Next one is the item title inside widgets')
+            +fonts('h3', 'H3', 'This is a label or CTA text')
+            +fonts('body', 'Body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')
