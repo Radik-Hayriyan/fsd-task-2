@@ -140,6 +140,14 @@ module.exports = {
             template: `${PAGES_DIR}/ui-kit/headers-and-footers/headers-footers.pug`,
             filename: './headers-footers.html',
         }),
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/ui-kit/cards/cards.pug`,
+            filename: './cards.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/ui-kit/form-elements/form-elements.pug`,
+            filename: './form-elements.html',
+        }),
         // ...PAGES.map(page => new HtmlWebpackPlugin({
         //     template: `${PAGES_DIR}/${page.folder}/${page.file}`,
         //     filename: `./${page.file.replace(/\.pug/,'.html')}`
