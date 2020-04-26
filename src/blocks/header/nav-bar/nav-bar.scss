@@ -1,0 +1,41 @@
+@import "../../../styles/colors";
+
+.nav-bars {
+  list-style: none;
+  display: flex;
+
+  li {
+    margin-right: 30px;
+    align-items: center;
+    display: flex;
+
+    &.with-icon {
+      margin-right: 20px;
+    }
+
+    a {
+      font-family: Montserrat-Regular, sans-serif;
+      color: $dark-shade-50;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 17px;
+
+      &.bar_bold {
+        font-family: Montserrat-Bold, sans-serif;
+        color: $dark-shade-75;
+      }
+    }
+
+    .icon_arrow_down {
+      display: flex;
+      align-items: end;
+      width: 24px;
+      height: 21px;
+
+      i {
+        color: $dark-shade-50;
+      }
+    }
+  }
+}

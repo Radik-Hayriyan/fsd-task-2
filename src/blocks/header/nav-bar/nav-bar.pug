@@ -1,0 +1,8 @@
+mixin nav-bar(bars)
+    ul.nav-bars
+        each val in bars
+            li(class= val.icon ? "with-icon" : "")
+                a(href="#" class= val.bold ? "bar_bold" : "")=val.text
+                if val.icon
+                    .icon_arrow_down
+                        i.material-icons keyboard_arrow_down

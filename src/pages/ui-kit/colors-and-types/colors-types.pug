@@ -13,8 +13,8 @@ mixin fonts(parentClass, name, description)
         .description=description
 
 block content
-    include ../../../blocks/logo-img/logo-img.pug
     .colors-types-wrapper
+        include ../../../blocks/logo-img/logo-img.pug
         .colors
             +colors('dark-shade-100', 'Dark Shade 100%', '#1F2041')
             +colors('dark-shade-75', 'Dark Shade 75%', '#1F2041')

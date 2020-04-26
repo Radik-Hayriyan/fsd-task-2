@@ -1,0 +1,17 @@
+mixin header(bars, barMarginFromLogo, isLogin)
+    .header-wrapper
+        .header-logo
+            include ../../blocks/logo/logo.pug
+        .header__nav-bar(style="margin-left: " + barMarginFromLogo + "px")
+            include nav-bar/nav-bar
+            +nav-bar(bars)
+        if isLogin
+            .header__login-register
+                .login-wrapper
+                    .login login
+                .register-wrapper
+                    .register register
+        else
+            .header__user
+                .line |
+                .user-name Cosmin Negoita

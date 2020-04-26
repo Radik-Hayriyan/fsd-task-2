@@ -5,3 +5,6 @@ import '../styles/fonts.scss';
 import '../styles/colors.scss';
 import '../blocks/logo-img/logo-img.scss';
 import '../blocks/logo/logo.scss';
+import '../blocks/header/header.scss';
+import '../blocks/header/nav-bar/nav-bar.scss';
+
