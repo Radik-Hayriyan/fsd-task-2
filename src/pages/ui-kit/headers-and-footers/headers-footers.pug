@@ -24,4 +24,28 @@ block content
                 {text: 'Documentation'}
             ], 305)
         .footer
+            include ../../../blocks/footer/footer.pug
+            +footer(
+                'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam' +
+                ' eget nullam pellentesque aliquam curabitur cociis.',
+                [
+                    {text: 'Navigation', bold: true},
+                    {text: 'About Us'},
+                    {text: 'News'},
+                    {text: 'Support'},
+                    {text: 'Products'},
+                ],
+                [
+                    {text: 'About Us', bold: true},
+                    {text: 'Who we are'},
+                    {text: 'Our team'},
+                    {text: 'Careers'},
+                    {text: 'Investors'},
+                ],
+                [
+                    {text: 'Support', bold: true},
+                    {text: 'Documentation'},
+                    {text: 'Community'},
+                    {text: 'Get in Touch'},
+                ])
         .headers-footers__footer

@@ -1,0 +1,7 @@
+mixin button(type, parentWidth, parentHeight, value, marginRight)
+    .button-wrapper(style="width: " + parentWidth + "px; height: " + parentHeight + "px; margin-right: " + marginRight + "px")
+        case type
+            when 'login'
+                .button_login=value
+            when 'register'
+                .button_register=value

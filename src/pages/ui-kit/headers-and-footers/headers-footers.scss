@@ -1,3 +1,5 @@
+@import "../../../styles/colors";
+
 .headers-footers-wrapper {
   display: flex;
   flex-direction: column;
@@ -10,4 +12,16 @@
 
 .header-user {
   margin-top: 40px;
+}
+
+.footer {
+  margin-top: 40px;
+  height: 443px;
+  background-color: $white;
+}
+
+.headers-footers__footer {
+  margin-top: 40px;
+  height: 367px;
+  background-color: $white;
 }

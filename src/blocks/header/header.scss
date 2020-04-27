@@ -2,62 +2,36 @@
 
 .header-wrapper {
   display: flex;
-  align-self: center;
+  align-items: center;
   height: 70px;
-  background-color: white;
+  background-color: $white;
 }
 
 .header-logo {
   margin-left: 140px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.header__nav-bar {
-  display: flex;
-  align-self: center;
-  margin-top: 26px;
-  margin-bottom: 26px;
+  height: 40px;
 }
 
 .header__login-register {
   display: flex;
-  align-self: center;
-}
-
-.login-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 79px;
-  height: 34px;
-  margin-right: 30px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-}
-
-.register-wrapper {
-  width: 101px;
-  height: 34px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  border-radius: 22px;
-}
-
-.login {
-  font-family: Montserrat-Bold, sans-serif;
-  font-size: 12px;
-  background: white;
-  border-radius: 22px;
-  color: $purple;
-  padding: 8px 19px;
-  text-transform: uppercase;
 }
 
 .header__user {
   display: flex;
-  align-self: center;
+  align-items: center;
 }
 
 .line {
-  margin-right: 20px;
+  margin-right: 30px;
+  height: 30px;
+  width: 1px;
+  background: $dark-shade-10;
+}
+
+.user-name {
+  font-family: Montserrat-Regular, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  height: 18px;
+  color: $dark-shade-50;
 }

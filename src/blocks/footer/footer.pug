@@ -1,0 +1,26 @@
+mixin footer(footerUpInfoText, navData, aboutData, supportData)
+    .footer-wrapper
+        .footer-up
+            .footer-up__info
+                include ../../blocks/logo/logo.pug
+                .footer-up__info__text=footerUpInfoText
+            .footer-up__nav
+                ul
+                    each val in navData
+                        li
+                            a(href="#" class= val.bold ? "bold": "")=val.text
+            .footer-up__about
+                ul
+                    each val in aboutData
+                        li
+                            a(href="#" class= val.bold ? "bold" : "")=val.text
+            .footer-up__support
+                ul
+                    each val in supportData
+                        li
+                            a(href="#" class= val.bold ? "bold" : "")=val.text
+            .footer-up__subscribe
+        .footer-down
+            .footer-down__text
+            .footer-down__social-icons
+

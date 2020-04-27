@@ -2,16 +2,15 @@ mixin header(bars, barMarginFromLogo, isLogin)
     .header-wrapper
         .header-logo
             include ../../blocks/logo/logo.pug
-        .header__nav-bar(style="margin-left: " + barMarginFromLogo + "px")
+        div(style="margin-left: " + barMarginFromLogo + "px")
             include nav-bar/nav-bar
             +nav-bar(bars)
         if isLogin
             .header__login-register
-                .login-wrapper
-                    .login login
-                .register-wrapper
-                    .register register
+                include ../../blocks/button/button.pug
+                +button('login', 79, 34, 'login', 20)
+                +button('register', 101, 34, 'register')
         else
             .header__user
-                .line |
+                .line
                 .user-name Cosmin Negoita

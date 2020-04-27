@@ -3,10 +3,10 @@
 .nav-bars {
   list-style: none;
   display: flex;
+  height: 18px;
 
   li {
     margin-right: 30px;
-    align-items: center;
     display: flex;
 
     &.with-icon {
@@ -29,7 +29,7 @@
 
     .icon_arrow_down {
       display: flex;
-      align-items: end;
+      align-items: center;
       width: 24px;
       height: 21px;
 
